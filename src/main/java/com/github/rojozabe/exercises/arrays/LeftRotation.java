@@ -1,8 +1,3 @@
-/**
- * https://www.hackerrank.com/challenges/ctci-array-left-rotation
- * Given an array a of n integers and a number, d , perform d left rotations on the array.
- * Return the updated array to be printed as a single line of space-separated integers
- */
 package arrays;
 
 import java.io.BufferedReader;
@@ -15,8 +10,13 @@ import utils.FileHelper;
 import utils.MathHelper;
 
 /**
+ * https://www.hackerrank.com/challenges/ctci-array-left-rotation
+ * <p>
+ * Given an array a of n integers and a number, d , perform d left rotations on the array.
+ * <p>
+ * Return the updated array to be printed as a single line of space-separated integers
+ * 
  * @author rzapata
- *
  */
 public class LeftRotation {
 

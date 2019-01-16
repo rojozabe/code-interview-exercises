@@ -1,4 +1,5 @@
 package utils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -9,19 +10,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * File Reader Helper to save a bit of time
- */
-
-/**
+ * File Reader Helper to save a bit of time intializing
+ * objects to read files
+ * 
  * @author rzapata
- *
  */
 public class FileHelper {
 	
 	/**
 	 * Get BufferedReader from canonical file path name
 	 * @param canonicalFileName
-	 * @return BufferedReader
+	 * @return BufferedReader object
 	 */
 	public static BufferedReader readFile(String canonicalFileName) {
 		BufferedReader br;
@@ -38,7 +37,7 @@ public class FileHelper {
 	}
 	
 	/**
-	 * Get BufferedReader from input stream (generally System.in)
+	 * Get BufferedReader from input stream (generally <code>System.in</code>)
 	 * @param in
 	 * @return BufferedReader 
 	 */

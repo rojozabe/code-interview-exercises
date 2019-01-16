@@ -1,16 +1,15 @@
-/**
- * 
- */
 package utils;
 
 /**
- * @author rzapata
- *
+ * Math custom library
+ * 
+ * @author rzapata *
  */
 public class MathHelper {
 
 	/**
-	 * GCD based on the Euclidean algorithm: https://en.wikipedia.org/wiki/Euclidean_algorithm
+	 * GCD based on the Euclidean algorithm: https://en.wikipedia.org/wiki/Euclidean_algorithm.
+	 * <p>
 	 * Time complexity: O(log(max(a,b)))
 	 * @param a
 	 * @param b
