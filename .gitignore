@@ -1,2 +1,9 @@
 /bin/
-/.vscode/
+
+# vs code files
+node_modules/
+.vscode/
+settings.json
+secretnotes.md
+imports/lib/
+public/fonts/
