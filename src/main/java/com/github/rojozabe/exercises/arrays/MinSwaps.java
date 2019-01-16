@@ -34,6 +34,7 @@ public class MinSwaps {
      * All you need to do is to count the number of people who overtake a person (to the right).
      * <p>
      * Time complexity: O(n)
+     * <p>
      * Space complexity:  O(1)
      * 
      * @param q Array of integers
