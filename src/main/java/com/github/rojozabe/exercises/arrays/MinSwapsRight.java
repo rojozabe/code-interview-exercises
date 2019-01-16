@@ -14,7 +14,7 @@ import utils.FileHelper;
  * 
  * @author rzapata
  */
-public class MinSwaps {
+public class MinSwapsRight {
     public static void main(String[] args) throws IOException {
         BufferedReader br = FileHelper.readFile("./src/test/java/com/github/rojozabe/exercises/arrays/MinSwaps.txt");
         int t = Integer.parseInt(br.readLine());
