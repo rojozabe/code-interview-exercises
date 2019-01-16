@@ -51,6 +51,7 @@ public class LeftRotation {
 	 * 2. LCM derived from GCD: https://stackoverflow.com/questions/4201860/how-to-find-gcd-lcm-on-a-set-of-numbers
 	 * 3. A Juggling Algorithm: https://www.geeksforgeeks.org/array-rotation
 	 * 4. Small explanation about Juggling algo: https://stackoverflow.com/questions/23321216/rotating-an-array-using-juggling-algorithm
+	 * 5. Youtube explanation: https://youtu.be/viaha1SnpT4
 	 * 
 	 * Time complexity: O(n)
 	 * Space complexity: O(1)
