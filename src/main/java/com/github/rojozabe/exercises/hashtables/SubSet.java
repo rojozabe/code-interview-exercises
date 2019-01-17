@@ -2,7 +2,6 @@ package hashtables;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 
 import utils.FileHelper;
@@ -19,7 +18,9 @@ public class SubSet {
     public static void main(String[] args) throws IOException {
         BufferedReader br = FileHelper.readFile("./src/test/java/com/github/rojozabe/exercises/hashtables/SubSet.txt");
         String[] input = br.readLine().trim().split("\\s+");
+        @SuppressWarnings("unused")
         int m = Integer.parseInt(input[0]);
+        @SuppressWarnings("unused")
         int n = Integer.parseInt(input[1]);
         String[] magazine = br.readLine().trim().split("\\s+");
         String[] note = br.readLine().trim().split("\\s+");
