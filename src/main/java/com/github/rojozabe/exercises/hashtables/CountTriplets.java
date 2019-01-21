@@ -30,11 +30,12 @@ public class CountTriplets {
     /**
      * To count triplets as we know r for each number in the array we can store it in a Map and check if <code>i - r^2</code>
      * and <code>i - (r^2 + r)</code> already exist in the map because a contrainst says <i>i < j < k</i> so one count would be
-     * enoungh
+     * enoungh. To achieve O(n) there must be 2 maps: One to hold count of needed values after current to complete and Two
+     * to hold count of needed values to complete triplet.
      * <p>
      * Time complexity: O(n)
      * <p>
-     * Space complexity: O(a)
+     * Space complexity: O(2*a)
      * 
      * @param arr input array
      * @param r triplets ratio
@@ -43,24 +44,14 @@ public class CountTriplets {
      */
     private static long countTriplets(long[] arr, long r, int n) {
         long triplets = 0l;
-        HashMap<Long, Integer> countMap = new HashMap<Long, Integer>();
+        HashMap<Long, Long> mp2 = new HashMap<Long, Long>();
+        HashMap<Long, Long> mp3 = new HashMap<Long, Long>();
 
-        // for (int i = 0; i < n; i++) {
-        //     long third = arr[i];
-        //     int thirdCount = countMap.getOrDefault(third, 0);
-        //     //int secondCount = countMap.getOrDefault(Math.sqrt(third, 2), 0);
-        //     //int firstCount = countMap.getOrDefault(Math.pow(third, 2) - third, 0);
-        //     System.out.printf("thirdCount:%d, secondCount:%d, firstCount:%d\n", thirdCount, secondCount, firstCount);
-        //     triplets += (thirdCount + 1) * secondCount * firstCount;
-
-        //     countMap.put(third, ++thirdCount);
-
-        //     for (Long number : countMap.keySet()){                
-        //         int value = countMap.get(number);  
-        //         System.out.println(number + " " + value);  
-        //     } 
-            
-        // }
+        for (int i = 0; i < n; i++) {
+            triplets += mp3.getOrDefault(arr[i], 0l);
+            mp3.put(arr[i] * r, mp3.getOrDefault(arr[i] * r, 0l) + mp2.getOrDefault(arr[i], 0l));
+            mp2.put(arr[i] * r, mp2.getOrDefault(arr[i] * r, 0l) + 1);
+        }        
 
         return triplets;
     }
