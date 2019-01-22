@@ -2,7 +2,7 @@
 
 This repo was made to practice technical interview code exercises.
 
-## HackerRank allowed time complexities:
+## HackerRank allowed complexities:
 | max n (<=) |  max O(n)  |
 |------------|------------|
 |  10..11    |  $n!, n^6$  |
