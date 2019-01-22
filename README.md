@@ -2,12 +2,8 @@
 
 This repo was made to practice technical interview code exercises.
 
-<<<<<<< HEAD
 ## HackerRank allowed time complexities
 
-=======
-## HackerRank allowed complexities:
->>>>>>> 5716a94200ae727c6426235a3028a9512479bce2
 | max n (<=) |  max O(n)  |
 |------------|------------|
 |  10..11    |  <img src="https://latex.codecogs.com/gif.latex?$n!,&space;n^6$" title="$n!, n^6$" /> |
