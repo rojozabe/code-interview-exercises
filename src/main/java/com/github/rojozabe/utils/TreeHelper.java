@@ -18,8 +18,8 @@ public class TreeHelper {
      * <p>
      * Space complexity: O(h) height of the tree
      * 
-     * @param root
-     * @return
+     * @param root node
+     * @return if binary tree is balanced
      */
     public static <T> boolean isBalanced(BinaryTree<T> root) {
         return isBalancedHelper(root) > -1;
