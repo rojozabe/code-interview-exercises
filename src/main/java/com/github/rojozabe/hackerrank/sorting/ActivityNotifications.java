@@ -4,7 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import utils.FileHelper;
 
@@ -27,12 +31,14 @@ public class ActivityNotifications {
     }
 
     /**
-     * To achieve iterate through the array once we need a way to keep the iterated amount sorted in another array,
-     * that way we can determine the median more efficiently.
+     * Count the notifications after d days, taking into account that the previous <i>median</i> will be calculated by
+     * the d trailing expenditures. To achieve this we need to keep a Queue and a ordered data structure, the contrainst
+     * of the problems says <code>0 <= expenditure[i] <= 200</code> so an array of length 201 will suffice, otherwise
+     * calculation time will be too much for more complex data structures time TreeMap.
      * <p>
-     * Time complexity: O(n logn)
+     * Time complexity: 
      * <p>
-     * Space complexity: O(a)
+     * Space complexity: 
      * 
      * @param expenditure input array
      * @param d lookback days for median spending
@@ -41,47 +47,44 @@ public class ActivityNotifications {
      */
     private static int activityNotifications(int[] expenditure, int d, int n) {
         int notifications = 0;
-        List<Integer> sortedExpenses = new ArrayList<Integer>();
-        for (int i = 0; i < n; i++) {
-            if(i > d) {
-                double m = median(sortedExpenses);
-                if(m * 2 >= expenditure[i])
-                    notifications++;
-            }
-            insertionSort(sortedExpenses, expenditure[i]);
-        }
+        Deque<Integer> trailExpenditure = new LinkedList<Integer>();
+        int[] freq = new int[201];
 
+        for (int i = 0; i < n; i++) {
+            System.out.println("expenditure[i]:" + expenditure[i]);
+            trailExpenditure.addLast(expenditure[i]);
+            freq[expenditure[i]]++;
+
+            if(i >= d) {
+                int discardedExpense = trailExpenditure.removeFirst();
+                freq[discardedExpense]--;
+                double m = median(trailExpenditure, freq);
+                if(m * 2 <= expenditure[i])
+                    notifications++;
+            }            
+        }
+        
         return notifications;
     }
 
-    private static double median(List<Integer> sortedExpenses) {
-        int n = sortedExpenses.size();
-        
-        if(n % 2 == 0)
-            return ((double) sortedExpenses.get(n / 2 - 1) + (double) sortedExpenses.get(n / 2)) / 2;
-        else
-            return (double) sortedExpenses.get(n / 2);
-            
-    }
-
-    /**
-     * Insert an eleemnt to the list keeping the list sorted.
-     * Using "binary search" to look for the right place.
-     * Time complexity: O(logn) because it "divides" the array by 2 each iteration to see where the element should go.
-     * @param sortedExpenses List of expenses
-     * @param exp element to insert sortly
-     */
-    private static void insertionSort(List<Integer> sortedExpenses, int exp) {
-        int left = 0, right = sortedExpenses.size(), mid = 0;
-        
-        while(left < right) {
-            mid = (left + right) / 2;
-            if(sortedExpenses.get(mid) > exp)
-                right = mid;
-            else
-                left = mid + 1;
+    private static double median(Deque<Integer> trailExpenditure, int[] freq) {
+        int a = trailExpenditure.size() / 2, b = a + 1;
+        int mid1 = -1, mid2 = -1, rs = 0;
+        System.out.printf("  a:%d", a);
+        for (int i = 0; i < freq.length; i++) {
+            rs += freq[i];
+            System.out.printf("    i:%d, rs:%d, mid1:%d, mid2:%d\n", i, rs, mid1, mid2);
+            if(rs > a && mid1 == -1)
+                mid1 = i;
+            if(rs >= b) {
+                mid2 = i;
+                break;
+            }                
         }
-
-        sortedExpenses.add(left, exp);;
-    }
+        System.out.printf("        rs:%d, mid1:%d, mid2:%d\n", rs, mid1, mid2);
+        if(freq.length % 2 == 0)
+            return ((double) mid1 + (double) mid2) / 2;
+        else
+            return (double) mid2;            
+    }    
 }
