@@ -1,0 +1,8 @@
+abcdefghhgfedecba
+--YES
+
+aabbccddeefghi
+--NO
+
+aabbcd
+--NO
