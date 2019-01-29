@@ -28,7 +28,7 @@ public class AlternatingCharacters {
      * As we only have two different characters in the string A or B we can have a previous character variable,
      * if <code>current == previous</code> then current should be deleted
      * <p>
-     * Time complexity: O(s)
+     * Time complexity: O(s) per q
      * <p>
      * Space complexity: O(1)
      * @param s
