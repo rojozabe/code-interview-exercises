@@ -40,4 +40,32 @@ public class TreeHelper {
         else
             return 1 + Math.max(leftHeight, rightHeight);
     }
+
+    /**
+	 * From geeksforgeeks: Method Correct and Efficient solution looks at each node
+	 * only once. The trick is to write a utility helper function isBSTUtil(BT Node,
+	 * int min, int max) that traverses down the tree keeping track of the narrowing
+	 * min and max allowed values as it goes, looking at each node only once. The
+	 * initial values for min and max should be INT_MIN and INT_MAX — they narrow
+	 * from there.
+	 * 
+	 * Time complexity: O(n).
+	 * 
+	 * @param root.
+	 * @return if tree is Binary Search Tree.
+	 */
+	public static boolean isBinarySearchTree(BinaryTree<Integer> root) {
+		return isBinarySearchTree(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
+
+	// Returns true if the given tree is a BST and its values are >= min and <= max.
+    private static boolean isBinarySearchTree(BinaryTree<Integer> node, int min, int max) {
+        if (node == null)
+            return true;
+
+        if (node.getValue() < min || node.getValue() > max)
+            return false;
+
+        return isBinarySearchTree(node.getLeft(), min, node.getValue() - 1) && isBinarySearchTree(node.getRight(), node.getValue() + 1, max);
+    }
 }
