@@ -1,0 +1,14 @@
+4
+aaaa
+--10
+
+7
+abcbaba
+--10 {a, b, c, b, bcb, a, }
+
+5
+asasd
+--7 {a, s, asa, a, sas, s, d}
+
+
+
