@@ -1,11 +1,8 @@
 package hackerrank.thirtydaysofcode;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
-import utils.FileHelper;
 
 public class Day1_DataTypes {
     public static void main(String[] args) throws IOException {
