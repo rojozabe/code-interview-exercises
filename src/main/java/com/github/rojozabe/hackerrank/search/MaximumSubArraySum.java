@@ -28,6 +28,9 @@ import utils.FileHelper;
  * just calculated with his <b>succesor</b> in the TreeSet using the function <code>(a - b) % m</code> 
  * to get the maximum result and store the ordered prefix just calculated. We need the successor because:
  * <code>(prefix[i] - prefix[j] + m) % m = prefix[i] - prefix[j] <= prefix[i]</code>.
+ * <p>
+ * Time complexity: O(n logn) -> red-black trees (TreeSet in java) has logn insertion time
+ * Space complexity: O(2 * n) -> O(n)
  */
 
 public class MaximumSubArraySum {
