@@ -2,9 +2,6 @@ package interviewcake;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
