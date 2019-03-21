@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import utils.FileHelper;
 
-public class Day4_ClassVsInstance {
+public class Day04_ClassVsInstance {
     private static class Person {
         private int age;
 

@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import utils.FileHelper;
 
-public class Day2_Operators {
+public class Day02_Operators {
     private static void solve(double meal_cost, int tip_percent, int tax_percent) {
         int totalExpense = (int) Math.round(meal_cost + meal_cost * tip_percent / 100 + meal_cost * tax_percent / 100);
         System.out.println(totalExpense);

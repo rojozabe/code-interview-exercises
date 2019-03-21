@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import utils.FileHelper;
 
-public class Day7_Arrays {
+public class Day07_Arrays {
     private static void reverseArray(int[] a, int n) {
         int mid = n / 2;
         for (int i = 0; i < mid; i++) {

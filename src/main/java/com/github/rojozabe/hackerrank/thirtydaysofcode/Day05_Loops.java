@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import utils.FileHelper;
 
-public class Day5_Loops {
+public class Day05_Loops {
     public static void main(String[] args) throws IOException {
         BufferedReader br = FileHelper.readFile("./src/test/java/com/github/rojozabe/hackerrank/thirtydaysofcode/Day5_Loops.txt");
         int n = Integer.parseInt(br.readLine().trim());

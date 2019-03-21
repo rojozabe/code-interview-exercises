@@ -7,7 +7,7 @@ import java.util.Map;
 
 import utils.FileHelper;
 
-public class Day8_DictionariesAndMaps {
+public class Day08_DictionariesAndMaps {
     public static void main(String[] args) throws IOException {
         BufferedReader br = FileHelper.readFile("./src/test/java/com/github/rojozabe/hackerrank/thirtydaysofcode/Day8_DictionariesAndMaps.txt");
         int n = Integer.parseInt(br.readLine().trim());

@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import utils.FileHelper;
 
-public class Day9_Recursion3 {
+public class Day09_Recursion3 {
     private static int factorial(int n) {
         if (n <= 1) return 1;
         return n * factorial(n - 1);

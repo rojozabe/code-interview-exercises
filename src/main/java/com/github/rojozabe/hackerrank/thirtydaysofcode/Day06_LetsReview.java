@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import utils.FileHelper;
 
-public class Day6_LetsReview {
+public class Day06_LetsReview {
     public static void main(String[] args) throws IOException {
         BufferedReader br = FileHelper.readFile("./src/test/java/com/github/rojozabe/hackerrank/thirtydaysofcode/Day6_LetsReview.txt");
         int t = Integer.parseInt(br.readLine().trim());
