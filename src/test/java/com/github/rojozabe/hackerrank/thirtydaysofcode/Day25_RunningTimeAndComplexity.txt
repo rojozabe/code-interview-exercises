@@ -1,0 +1,7 @@
+3
+12
+5
+7
+--Not prime
+--Prime
+--Prime
