@@ -1,5 +1,8 @@
 /bin/
 
+# eclipse project settings
+.settings/
+
 # vs code files
 node_modules/
 .vscode/
